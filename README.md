@@ -9,6 +9,4 @@ All codes related to system programming and compiler construction:
 
 4. Eliminating left recursion
 
-5. Recursive Descent Parser
-
-6. Operator Precedence Parser,etc
+5. Operator Precedence Parser,etc
