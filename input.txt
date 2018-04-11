@@ -1,0 +1,27 @@
+PRGAM       START   20
+            USING   *,15
+            LA      15,SETUP
+            SR      TOTAL,TOTAL
+AC          EQU     2
+INDEX       EQU     3
+TOTAL       EQU     4
+DATAB       EQU     13
+SETUP       EQU     *
+            USING   SETUP,15
+            L       DATABASE,=A(DATA1)
+            USING   DATAAREA,DATABASE
+            SR      INDEX,INDEX
+LOOP        L       AC,DATA1(INDEX)
+            AR      TOTAL,AC
+            A       AC,=F'5'
+            ST      AC,SAVE(INDEX)
+            A       INDEX,=F'4'
+            C       INDEX,=F'8000'
+            BNE     LOOP
+            LR      1,TOTAL
+            BR      14
+            LTORG
+SAVE        DS      2000F
+DATAA       EQU     *
+DATA1       DC      F'25,26,27'
+END
